@@ -1,0 +1,369 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    user-select: none;
+}
+
+.coin {
+bottom: 15px;
+height: 3rem;
+width: auto;
+}
+
+
+header{
+display: flex;
+flex-direction: row;
+text-align: center;
+align-items: center;
+justify-content: space-between ;
+position: relative;
+top: 0;
+width: 1005;
+height: 80px;
+color: #FFF;
+padding-left: 20px;
+padding-right: 20px;
+}
+
+
+
+header h4 {
+    position: relative;
+    top: 15px;
+    bottom: 1rem;
+    font-size: 3rem;
+}
+
+header h5 {
+    position: relative;
+    top: 15px;
+    bottom: 1rem;
+    font-size: 3rem;
+}
+.LandingPage {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../Photos/BACKGROUND1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+    background-color: none;
+    min-height: 100vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10%;
+    animation: slideUp .8s ease forwards;
+}
+
+/*buttons */
+
+a.btn-1 {
+    display: inline;
+    color: #FFF;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 80pt;
+    transition: ease-in-out 0.5s;
+    padding: 10px;
+    text-decoration: none;
+
+}
+
+
+.btn-1:hover {
+  box-shadow: inset 1200px 0 0 0 rgb(243, 163, 15);
+  color: #161616;
+}
+
+
+/*splash screen */
+
+.intro {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #161616;
+    transition: 1s;
+}
+
+.logo-header{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF;
+
+}
+
+.logo{
+    position: relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+}
+
+.logo.active{
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+}
+
+.logo.fade{
+    bottom: 150px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+    }
+
+
+
+    /* Line 1 */
+
+.LineTop{
+position: absolute;
+width: 100%;
+height: 0px;
+left: 0px;
+top: 89px;
+border: 1px solid #FFFFFF;
+
+}
+
+
+
+@keyframes slideInRight {
+    0% {
+      transform: translateX(500px) scale(.2);
+    }
+    100% {
+      transform: translateX(0px) scale(1);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-500px) scale(.2);
+    }
+    100% {
+      transform: translateX(0px) scale(1);
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(300px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-300px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes expand {
+    0% {
+      transform: translateX(1400px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+  
+
+@keyframes slideLeft {
+  0% {
+    transform: translate(50%, -50%); 
+  }
+  100%{
+    transform: translate(0%, -50%); 
+  }
+}
+
+
+/*photo carousel */
+  #image-track {
+    display: flex;
+    gap: 4vmin;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(0%, -40%); 
+    user-select: none; /* -- Prevent image highlighting -- */
+  
+  }
+  
+ .image {
+    width: 40vmin;
+    height: 56vmin;
+    object-fit: cover;
+    object-position: 100% center;
+    cursor: pointer;
+  }
+  
+
+
+  .slidecontainer {
+    width: 100%; /* Width of the outside container */
+  }
+  
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 50%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: none; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    position: absolute;
+    left: 25%;
+    top: 90%;
+    border-radius: 10px;
+  }
+  
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #e0b02b; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border: #e0b02b;
+    border-radius: 10px;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: white; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border: white;
+    border-radius: 10px;
+  }
+
+  .LineSlider {
+width: 50%;
+position: absolute;
+left: 25%;
+top: 91%;
+
+  }
+
+
+  .Movement {
+    animation: slideLeft .8s ease-out forwards;
+  }
+
+
+.gallery{
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 5vw);
+  grid-gap: 15px;
+ padding: 5rem;
+ background-image: url(/Photos/swirls2.jpg);
+ background-size: cover;
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery__item--0 {
+  grid-column-start: 1;
+  grid-column-end: 8;
+  grid-row-start: 1;
+  grid-row-end: 15;
+  font-size: 3rem;
+  text-shadow: 5px 2px #000000;
+}
+
+.gallery__item--1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 16;
+}
+
+.gallery__item--2 {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-start: 2;
+  grid-row-end: 8;
+}
+
+.gallery__item--3 {
+  grid-column-start: 6;
+  grid-column-end: 9;
+  grid-row-start: 2;
+  grid-row-end: 10;
+}
+
+.gallery__item--4 {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-start: 8;
+  grid-row-end: 60;
+}
+.gallery__item--5 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 16;
+  grid-row-end: 88;
+}
+
+.gallery__item--6{
+  grid-column-start: 6;
+  grid-column-end: 9;
+  grid-row-start: 10;
+  grid-row-end: 60;
+}
+.gallery__item--7{
+  grid-column-start: 4;
+  grid-column-end: 9;
+  grid-row-start: 60;
+  grid-row-end: 120;
+}
+.gallery__item--8{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 88;
+  grid-row-end: 160;
+}
+.gallery__item--9{
+  grid-column-start: 4;
+  grid-column-end: 9;
+  grid-row-start: 120;
+  grid-row-end: 160;
+}

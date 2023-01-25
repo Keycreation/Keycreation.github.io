@@ -1,0 +1,158 @@
+:root {
+    --background-color: rgb(6, 11, 25);
+    --border-color: rgb(255, 255, 255, 0.1);
+}
+
+body{
+    
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0px;
+    overflow:hidden;
+    background-image: url(/Photos/BACKGROUND1.jpg);
+    background-size: cover;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color) ;
+    background-color: rgba(0, 0, 0, 0.856);
+}
+
+nav > .nav-section {
+    padding: 2rem 2rem;
+    display: flex;
+    gap: 1rem;
+    border-left: 1px solid var(--border-color);
+    align-items: center;
+    justify-content: center;
+}
+
+h1, h2, h3, a, p, span {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+#nav-logo-section{
+    flex-basis: calc(100% / 4);
+}
+ #nav-link-section {
+    flex-basis: calc(100% / 2);
+}
+
+#nav-social-section, #nav-contact-section {
+    flex-grow: 1;
+}
+
+#nav-logo-section {
+    justify-content: flex-start;
+}
+
+#nav-logo-section {
+    font-size: 2rem;
+}
+
+#nav-link-section {
+    gap: 6rem;
+}
+
+#nav-social-section {
+    gap: 3rem;
+}
+
+nav > .nav-section :hover{
+    background-color: rgb(243, 163, 15);
+    transition: ease-out .5s;
+    color: black;
+}
+
+main {
+    flex-grow: 1;
+    position: relative;
+}
+
+main > article {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: 2fr 1fr;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+main > article[data-status="inactive"]{
+    transform: translateX(-100%)
+}
+
+main > article > .article-section {
+    height: 100%;
+    transition:  400ms ease;
+}
+
+
+main > article > .article-description-section, main > article > .article-nav-section {
+    border-left: 1px solid var(--border-color);
+}
+
+main > article > .article-titel-section, main > article > .article-nav-section {
+    border-top: 1px solid var(--border-color);
+}
+
+
+main > article > .article-image-section {
+    display: flex;
+    align-items: center;
+}
+
+main > article > .article-description-section {
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+}
+
+.article-titel-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+    font-size: 5rem;
+}
+
+
+
+.article-nav-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50%;
+}
+
+.fa-solid{
+    color: white;
+    font-size: 5rem;
+}
+
+button{
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.article-section [data-status="after"] {
+    transform: translateX(200%);
+}
